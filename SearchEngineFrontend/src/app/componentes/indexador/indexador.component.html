@@ -1,0 +1,11 @@
+<form class="col-xs-12" [formGroup]="formularioArchivo" (ngSubmit)="indexarArchivo()">
+    <div class="input-group">
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="archivo" formControlName="archivo" (change)="onFileChange($event)">
+            <label class="custom-file-label" for="archivo">{{ textoArchivo }}</label>
+        </div>
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-dark" [disabled]="formularioArchivo.invalid">Indexar</button>
+        </div>
+    </div>
+</form>

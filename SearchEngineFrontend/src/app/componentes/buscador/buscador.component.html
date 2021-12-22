@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="buscador">
+        <form [formGroup]="formularioBuscador" (ngSubmit)="buscar()" autocomplete="off">
+            <div class="logo">
+                <i class="fab fa-searchengin"></i>
+            </div>
+
+            <div class="barra-busqueda">
+                <div class="input-group">
+                    <input type="text" class="form-control barra-texto" id="consulta" formControlName="consulta">
+                    <div class="input-group-append">
+                        <button class="btn barra-boton" type="submit" [disabled]="formularioBuscador.invalid">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <p class="titulo-resultados">RESULTADOS A VISUALIZAR</p>
+
+            <div class="barra-cantidad" [ngClass]="{'barra-cantidad-invalid': formularioBuscador.controls['limite'].errors}">
+                <div class="input-group">
+                    <input type="text" class="form-control barra-numero" id="limite" formControlName="limite" placeholder="{{limite}}" (onChange)="restablecerLimite()">
+                </div>
+            </div>
+            <div class="text-danger error" *ngIf="formularioBuscador.controls['limite'].errors">
+                INGRESE ÚNICAMENTE NÚMEROS
+            </div>
+        </form>
+    </div>
+</div>

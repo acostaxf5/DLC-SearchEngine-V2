@@ -1,0 +1,42 @@
+<div class="container">
+    <div *ngIf="cantidad !== 0">
+        <div class="text-success cantidad-resultados">
+            {{ textoResultado }}
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-header card-header-not-empty bg-success">{{ consulta | uppercase }}</div>
+            <div class="card-body card-body-not-empty">
+                <div class="list-group">
+                    <div class="list-group-item list-group-item-action" *ngFor="let archivo of archivos">
+                        <div class="float-left">
+                            <span class="text-danger"><b>IR: </b> {{ archivo.indiceRelevancia }} </span>
+                            <br>
+                            <span><b>ARCHIVO: </b> {{ archivo.nombre | uppercase }} </span>
+                        </div>
+
+                        <div class="float-right mt-1">
+                            <a id="obtenerArchivo" class="btn btn-success mx-1" (click)="obtenerArchivo(archivo.nombre)">
+                                <i class="fas fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="cantidad === 0">
+        <div class="text-danger cantidad-resultados">
+            {{ cantidad }} RESULTADOS
+        </div>
+
+        <div class="card">
+            <div class="card-header card-header-empty bg-danger">{{ consulta | uppercase }}</div>
+            <div class="card-body card-body-empty">
+                <p>NO SE HAN ENCONTRADO RESULTADOS</p>
+                <p>INTENTE NUEVAMENTE CON OTRAS PALABRAS</p>
+            </div>
+        </div>
+    </div>
+</div>
