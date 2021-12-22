@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "ba106eba-af25-4e4b-9b69-7033154ab1bc",
+		"name": "search-engine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consulta con Límite",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [],
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/search-engine/buscador/buscar/consulta/limite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"search-engine",
+						"buscador",
+						"buscar",
+						"consulta",
+						"limite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Indexar Archivos Formulario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivos",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/search-engine/archivos/indexar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"search-engine",
+						"archivos",
+						"indexar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Archivo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/search-engine/archivos/obtener/archivo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"search-engine",
+						"archivos",
+						"obtener",
+						"archivo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
